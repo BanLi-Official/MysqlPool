@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/MysqlPool/build/Pool",
+  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/include -g -o CMakeFiles/MysqlPoolLib.dir/sourceFile/ConnPool.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/ConnPool.cpp",
+  "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/ConnPool.cpp",
+  "output": "Pool/CMakeFiles/MysqlPoolLib.dir/sourceFile/ConnPool.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/MysqlPool/build/Pool",
+  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/include -g -o CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/MysqlConn.cpp",
+  "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/MysqlConn.cpp",
+  "output": "Pool/CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o"
+}
+]

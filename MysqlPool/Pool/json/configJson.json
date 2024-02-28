@@ -1,0 +1,13 @@
+{
+    "ip" : "192.168.200.129",
+    "user" : "root",
+    "psw" : "12345678",
+    "dbName" : "scott" ,
+    "port" : 3306,
+    
+    "max" : 1024,
+    "min" : 50,
+    "timeout" : 1000,
+    "maxldleTime" :5000
+
+}

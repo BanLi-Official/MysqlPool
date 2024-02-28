@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "queue": "cpp",
+        "mutex": "cpp",
+        "condition_variable": "cpp",
+        "fstream": "cpp"
+    }
+}
