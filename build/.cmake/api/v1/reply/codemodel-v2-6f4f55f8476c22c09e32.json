@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.2"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Pool",
+					"jsonFile" : "directory-Pool-Debug-4fc29f1622ed095793ef.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Pool",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MysqlPoolTest"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "MysqlPool",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "MysqlPoolLib::@2d2811c1c4b61f3878bd",
+					"jsonFile" : "target-MysqlPoolLib-Debug-8e464777de48b4f9fa9f.json",
+					"name" : "MysqlPoolLib",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/hgfs/VMshared/code/c++/MysqlPool/build",
+		"source" : "/mnt/hgfs/VMshared/code/c++/MysqlPool"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

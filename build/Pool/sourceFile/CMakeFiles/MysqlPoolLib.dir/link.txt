@@ -1,0 +1,2 @@
+/usr/bin/ar qc /mnt/hgfs/VMshared/code/c++/MysqlPool/lib/libMysqlPoolLib.a CMakeFiles/MysqlPoolLib.dir/MysqlConn.cpp.o
+/usr/bin/ranlib /mnt/hgfs/VMshared/code/c++/MysqlPool/lib/libMysqlPoolLib.a

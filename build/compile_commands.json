@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/MysqlPool/build/Pool",
+  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile -g -o CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/MysqlConn.cpp",
+  "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/MysqlConn.cpp",
+  "output": "Pool/CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o"
+}
+]

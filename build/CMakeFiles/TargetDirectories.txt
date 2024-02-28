@@ -1,0 +1,5 @@
+/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/MysqlPool/build/Pool/CMakeFiles/MysqlPoolLib.dir
+/mnt/hgfs/VMshared/code/c++/MysqlPool/build/Pool/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/MysqlPool/build/Pool/CMakeFiles/rebuild_cache.dir
