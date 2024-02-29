@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
 #include <mysql/mysql.h>   //在usr/include中
-
+#include <chrono> //时间库
 
 using namespace std;
+using namespace chrono;
 
-class MysqlConn{
+class MysqlConn
+{
 public:
     //创建一个数据库连接池
     MysqlConn();
@@ -27,10 +29,15 @@ public:
     bool commit();
     //事务回滚
     bool rollBack();
+    //刷新时间戳（建立链接或者手动刷新后更新）
+    void setStartTime();
+    //计算时间差
+    long long getAliveTime();
 private:
     void freeResult();
     MYSQL* conn=nullptr;
     MYSQL_RES *sqlRes=nullptr;
     MYSQL_ROW row=nullptr;
+    steady_clock::time_point StartTime; //刷新后的时间戳
 
 };

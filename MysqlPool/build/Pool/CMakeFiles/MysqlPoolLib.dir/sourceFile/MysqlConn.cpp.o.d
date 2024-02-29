@@ -146,4 +146,6 @@ Pool/CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o: \
  /usr/include/mysql/client_plugin.h /usr/include/c++/9/stdlib.h \
  /usr/include/mysql/plugin_auth_common.h \
  /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
- /usr/include/mysql/errmsg.h
+ /usr/include/mysql/errmsg.h /usr/include/c++/9/chrono \
+ /usr/include/c++/9/ratio /usr/include/c++/9/limits \
+ /usr/include/c++/9/ctime /usr/include/c++/9/bits/parse_numbers.h

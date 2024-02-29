@@ -154,6 +154,18 @@ bool MysqlConn::rollBack()
     return mysql_rollback(conn);
 }
 
+void MysqlConn::setStartTime()
+{
+    StartTime = steady_clock::now();
+}
+
+long long MysqlConn::getAliveTime()
+{
+    nanoseconds res=steady_clock::now()-StartTime;
+    milliseconds milliSeconds=duration_cast<milliseconds>(res);   
+    return milliSeconds.count();
+}
+
 void MysqlConn::freeResult()
 {
     if(sqlRes != nullptr)
