@@ -1,6 +1,9 @@
 // #include "../headFile/MysqlConn.hpp"
 #include <iostream>
+#include <iomanip>
 #include "MysqlConn.hpp"
+#include <codecvt>
+#include <locale>
 
 using namespace std;
 
@@ -100,7 +103,7 @@ bool MysqlConn::next()
     row=mysql_fetch_row(sqlRes);
     if (row == nullptr)
     {
-        cout << "数据库获取next结果行失败！" << endl;
+        //cout << "数据库获取next结果行失败！" << endl;
         return false;
     }
     
@@ -116,7 +119,7 @@ string MysqlConn::getValue(int index)
     }
     //获取结果集的列数，判断index是否合理
     int rowCount=mysql_num_fields(sqlRes);
-    if(index<=0 || index>rowCount)
+    if(index<0 || index>rowCount)
     {
         cout << "当前列index不合理！" << endl;
         return nullptr;
@@ -164,6 +167,55 @@ long long MysqlConn::getAliveTime()
     nanoseconds res=steady_clock::now()-StartTime;
     milliseconds milliSeconds=duration_cast<milliseconds>(res);   
     return milliSeconds.count();
+}
+
+int MysqlConn::getRow()
+{
+    if(sqlRes == nullptr)
+    {
+        cout<<"结果集为空，请先利用query函数获取结果集"<<endl;
+        return -1;
+    }
+    int res = mysql_num_rows(sqlRes);
+    return res;
+}
+
+int MysqlConn::getColumn()
+{
+    if(sqlRes == nullptr)
+    {
+        cout<<"结果集为空，请先利用query函数获取结果集"<<endl;
+        return -1;
+    }
+    int res = mysql_num_fields(sqlRes);
+    return res;
+}
+
+
+
+void MysqlConn::showTable(string table)
+{
+    string str="select * from "+ table;
+    bool res = query(str);
+    
+    int row = getRow();
+    int column=getColumn();
+    MYSQL_FIELD *fields = mysql_fetch_fields(sqlRes);   //获取列的信息
+    for(int i=0;i<column;i++)
+    {
+        cout<<setw(10)<<fields[i].name<<"  ";
+    }
+    cout<<endl<<"--------------------------------------------"<<endl;
+    while (next())
+    {
+        for(int i=0;i<column;i++)
+        {
+            cout<<setw(10)<<std::left <<getValue(i)<<" | ";
+        } 
+        cout<<endl;
+    }
+    return ;
+    
 }
 
 void MysqlConn::freeResult()

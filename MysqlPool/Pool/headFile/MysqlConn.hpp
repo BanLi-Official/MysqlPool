@@ -33,6 +33,12 @@ public:
     void setStartTime();
     //计算时间差
     long long getAliveTime();
+    //获取行数
+    int getRow();
+    //获取列数
+    int getColumn();
+    //遍历整个表
+    void showTable(string table);
 private:
     void freeResult();
     MYSQL* conn=nullptr;

@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/main.dir/main.cpp.o -o /mnt/hgfs/VMshared/code/c++/MysqlPool/output/main   -L/mnt/hgfs/VMshared/code/c++/MysqlPool/lib  -Wl,-rpath,/mnt/hgfs/VMshared/code/c++/MysqlPool/lib /mnt/hgfs/VMshared/code/c++/MysqlPool/lib/libMysqlPoolLib.a -lmysqlclient -ljsoncpp 

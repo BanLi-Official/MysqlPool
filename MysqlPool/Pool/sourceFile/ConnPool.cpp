@@ -53,6 +53,7 @@ bool ConnPool::createConn()
         cout<<"创建一条数据库连接失败"<<endl;
         return false;
     }
+    sizeNow++;
     ConnQ.push(conn);
     return true;
 }
@@ -66,11 +67,12 @@ void ConnPool::produceConn()   //生产者
         {
             m_cond.wait(locker);
         }
-        createConn();
-        m_cond.notify_all();
-        
+        if(sizeNow < max)   //当前的数据库连接总数小于最大连接数则允许创建新的连接
+        {
+            createConn();
+            m_cond.notify_all();
+        }
     }
-    
     return ;
 }
 
@@ -78,7 +80,9 @@ void ConnPool::recycleConn()
 {
     while (true)
     {
+
         this_thread::sleep_for(chrono::milliseconds(500)); //^^^^
+        unique_lock<mutex> locker(mutexQ);
         while (ConnQ.size()>min)
         {
             MysqlConn *conn=ConnQ.front();
@@ -86,6 +90,7 @@ void ConnPool::recycleConn()
             {
                 ConnQ.pop();
                 delete conn;
+                sizeNow--;
             }
             else
             {
@@ -98,7 +103,7 @@ void ConnPool::recycleConn()
     return ;
 }
 
-MysqlConn *ConnPool::getConn() //消费者
+shared_ptr<MysqlConn> ConnPool::getConn() //消费者
 {
     //首先要保证连接池里面有东西
     //如果为空则要阻塞，直到有生产者通知生产了一条连接，如果超时则继续卡在循环
@@ -114,22 +119,41 @@ MysqlConn *ConnPool::getConn() //消费者
        }
     }
 
-    //取出一条连接，并弹出池子通知生产者
-    MysqlConn * conn=ConnQ.front();
-    ConnQ.pop();
-    m_cond.notify_all();
+    //取出一条连接，并弹出池子通知生产者,利用智能指针修改并实现连接的回收,初始化参数中第二个参数是一个用lamba表达式写的匿名函数，也可以使用常规函数
+    shared_ptr<MysqlConn> conn(ConnQ.front(),[this](MysqlConn * Conn){
+        unique_lock<mutex> locker(mutexQ);
+        Conn->setStartTime();  //重新设置起始时间
+        ConnQ.push(Conn);
+        m_cond.notify_all(); //通知被阻塞的消费者，归还了一个连接
 
-    //利用智能指针修改并实现连接的回收
-    return nullptr;
+    });
+    ConnQ.pop();
+    m_cond.notify_all();   //通知被阻塞的生产者
+
+    
+    return conn;
 }
 
-ConnPool::ConnPool()  //构造函数
+ConnPool::~ConnPool()  
 {
+    while (!ConnQ.empty())
+    {
+        MysqlConn *conn = ConnQ.front();
+        ConnQ.pop();
+        delete conn;
+    }
+    
+}
+
+ConnPool::ConnPool() // 构造函数
+{
+
     if(!parseConfigJson())
     {
         cout<<"分析配置文件失败！"<<endl;
     }
 
+    sizeNow=0;
     for(int i=0;i<min;i++)
     {
         createConn();
@@ -140,6 +164,7 @@ ConnPool::ConnPool()  //构造函数
     thread recycler(&ConnPool::recycleConn,this);
     producer.detach();
     recycler.detach();
+
 
 
     

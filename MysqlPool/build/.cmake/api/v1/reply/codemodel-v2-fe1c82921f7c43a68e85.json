@@ -16,7 +16,11 @@
 						"string" : "3.28.2"
 					},
 					"projectIndex" : 0,
-					"source" : "."
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
 				},
 				{
 					"build" : "Pool",
@@ -46,7 +50,11 @@
 					[
 						0
 					],
-					"name" : "MysqlPoolTest"
+					"name" : "MysqlPoolTest",
+					"targetIndexes" : 
+					[
+						1
+					]
 				},
 				{
 					"directoryIndexes" : 
@@ -69,6 +77,13 @@
 					"jsonFile" : "target-MysqlPoolLib-Debug-0ecbe110476cdb64ede8.json",
 					"name" : "MysqlPoolLib",
 					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-ac3f41d8b4f86f771461.json",
+					"name" : "main",
+					"projectIndex" : 0
 				}
 			]
 		}
