@@ -8,11 +8,12 @@
 class ConnPool
 {
 public:
-    static ConnPool * getConnPoll();  //通过一个专门的函数来统一获取实例
+    static ConnPool * getConnPool();  //通过一个专门的函数来统一获取实例
     //将复制构造函数给删除
     ConnPool(const ConnPool& obj) = delete; 
     //将重构的等于号给删除
     ConnPool & operator =(const ConnPool& obj) = delete;
+    shared_ptr<MysqlConn> getConn();//获取一条数据库连接
     ~ConnPool();  //将动态分配的ConnQ释放内存
  
 private:
@@ -21,7 +22,7 @@ private:
     bool createConn(); //创建一条连接
     void produceConn(); //创建连接
     void recycleConn(); //回收连接
-    shared_ptr<MysqlConn> getConn();//获取一条数据库连接
+    
 
 
     //数据库连接的信息

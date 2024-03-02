@@ -4,7 +4,9 @@ project(MysqlPool)
 link_directories(/usr/lib/x86_64-linux-gnu)   #mysql所需的头文件
 link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
-set(lib mysqlclient jsoncpp)    #mysql所需的库文件
+find_package(Threads REQUIRED) #查找多线程所需的库
+
+set(lib mysqlclient jsoncpp  Threads::Threads MyThreadPoolLib)     #mysql所需的库文件
 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/headFile)   #数据库连接池的头文件

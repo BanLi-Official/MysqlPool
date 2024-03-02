@@ -232,6 +232,15 @@ MysqlPool_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 MysqlPool_SOURCE_DIR:STATIC=/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool
 
+//Value Computed by CMake
+ThreadPoolLib_BINARY_DIR:STATIC=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/ThreadPool
+
+//Value Computed by CMake
+ThreadPoolLib_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+ThreadPoolLib_SOURCE_DIR:STATIC=/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool
+
 
 ########################
 # INTERNAL cache entries
@@ -315,6 +324,12 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=
+//Have library pthreads
+CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
+//Have library pthread
+CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/mnt/hgfs/VMshared/code/c++/MysqlPool
@@ -337,7 +352,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -382,6 +397,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 

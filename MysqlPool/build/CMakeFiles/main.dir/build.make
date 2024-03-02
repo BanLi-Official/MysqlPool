@@ -93,6 +93,7 @@ main_EXTERNAL_OBJECTS =
 /mnt/hgfs/VMshared/code/c++/MysqlPool/output/main: CMakeFiles/main.dir/main.cpp.o
 /mnt/hgfs/VMshared/code/c++/MysqlPool/output/main: CMakeFiles/main.dir/build.make
 /mnt/hgfs/VMshared/code/c++/MysqlPool/output/main: /mnt/hgfs/VMshared/code/c++/MysqlPool/lib/libMysqlPoolLib.a
+/mnt/hgfs/VMshared/code/c++/MysqlPool/output/main: /mnt/hgfs/VMshared/code/c++/MysqlPool/lib/libMyThreadPoolLib.a
 /mnt/hgfs/VMshared/code/c++/MysqlPool/output/main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /mnt/hgfs/VMshared/code/c++/MysqlPool/output/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)

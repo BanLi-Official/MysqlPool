@@ -65,15 +65,18 @@ CMAKE_BINARY_DIR = /mnt/hgfs/VMshared/code/c++/MysqlPool/build
 # The main recursive "all" target.
 all: CMakeFiles/main.dir/all
 all: Pool/all
+all: ThreadPool/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: Pool/preinstall
+preinstall: ThreadPool/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/main.dir/clean
 clean: Pool/clean
+clean: ThreadPool/clean
 .PHONY : clean
 
 #=============================================================================
@@ -92,18 +95,34 @@ Pool/clean: Pool/CMakeFiles/MysqlPoolLib.dir/clean
 .PHONY : Pool/clean
 
 #=============================================================================
+# Directory level rules for directory ThreadPool
+
+# Recursive "all" directory target.
+ThreadPool/all: ThreadPool/CMakeFiles/MyThreadPoolLib.dir/all
+.PHONY : ThreadPool/all
+
+# Recursive "preinstall" directory target.
+ThreadPool/preinstall:
+.PHONY : ThreadPool/preinstall
+
+# Recursive "clean" directory target.
+ThreadPool/clean: ThreadPool/CMakeFiles/MyThreadPoolLib.dir/clean
+.PHONY : ThreadPool/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
 CMakeFiles/main.dir/all: Pool/CMakeFiles/MysqlPoolLib.dir/all
+CMakeFiles/main.dir/all: ThreadPool/CMakeFiles/MyThreadPoolLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles --progress-num=4,5 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles --progress-num=7,8 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule
@@ -121,15 +140,15 @@ CMakeFiles/main.dir/clean:
 # Target rules for target Pool/CMakeFiles/MysqlPoolLib.dir
 
 # All Build rule for target.
-Pool/CMakeFiles/MysqlPoolLib.dir/all:
+Pool/CMakeFiles/MysqlPoolLib.dir/all: ThreadPool/CMakeFiles/MyThreadPoolLib.dir/all
 	$(MAKE) $(MAKESILENT) -f Pool/CMakeFiles/MysqlPoolLib.dir/build.make Pool/CMakeFiles/MysqlPoolLib.dir/depend
 	$(MAKE) $(MAKESILENT) -f Pool/CMakeFiles/MysqlPoolLib.dir/build.make Pool/CMakeFiles/MysqlPoolLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles --progress-num=1,2,3 "Built target MysqlPoolLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles --progress-num=4,5,6 "Built target MysqlPoolLib"
 .PHONY : Pool/CMakeFiles/MysqlPoolLib.dir/all
 
 # Build rule for subdir invocation for target.
 Pool/CMakeFiles/MysqlPoolLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Pool/CMakeFiles/MysqlPoolLib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 0
 .PHONY : Pool/CMakeFiles/MysqlPoolLib.dir/rule
@@ -142,6 +161,32 @@ MysqlPoolLib: Pool/CMakeFiles/MysqlPoolLib.dir/rule
 Pool/CMakeFiles/MysqlPoolLib.dir/clean:
 	$(MAKE) $(MAKESILENT) -f Pool/CMakeFiles/MysqlPoolLib.dir/build.make Pool/CMakeFiles/MysqlPoolLib.dir/clean
 .PHONY : Pool/CMakeFiles/MysqlPoolLib.dir/clean
+
+#=============================================================================
+# Target rules for target ThreadPool/CMakeFiles/MyThreadPoolLib.dir
+
+# All Build rule for target.
+ThreadPool/CMakeFiles/MyThreadPoolLib.dir/all:
+	$(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/depend
+	$(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles --progress-num=1,2,3 "Built target MyThreadPoolLib"
+.PHONY : ThreadPool/CMakeFiles/MyThreadPoolLib.dir/all
+
+# Build rule for subdir invocation for target.
+ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool/CMakeFiles/MyThreadPoolLib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 0
+.PHONY : ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule
+
+# Convenience name for target.
+MyThreadPoolLib: ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule
+.PHONY : MyThreadPoolLib
+
+# clean rule for target.
+ThreadPool/CMakeFiles/MyThreadPoolLib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/clean
+.PHONY : ThreadPool/CMakeFiles/MyThreadPoolLib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

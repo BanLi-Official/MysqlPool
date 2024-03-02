@@ -13,12 +13,15 @@
 			"add_executable",
 			"link_directories",
 			"target_link_libraries",
+			"set_property",
+			"find_package",
 			"include_directories"
 		],
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"Pool/CMakeLists.txt"
+			"Pool/CMakeLists.txt",
+			"/usr/local/share/cmake-3.28/Modules/FindThreads.cmake"
 		],
 		"nodes" : 
 		[
@@ -28,13 +31,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 16,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 11,
+				"line" : 15,
 				"parent" : 0
 			},
 			{
@@ -43,13 +46,35 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 19,
+				"line" : 21,
 				"parent" : 3
 			},
 			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 3
+			},
+			{
+				"file" : 2,
+				"parent" : 5
+			},
+			{
 				"command" : 3,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
 				"file" : 0,
-				"line" : 10,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 14,
 				"parent" : 0
 			}
 		]
@@ -66,8 +91,12 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 8,
 					"path" : "/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool"
 				}
 			],
 			"language" : "CXX",
@@ -82,6 +111,10 @@
 		{
 			"backtrace" : 1,
 			"id" : "MysqlPoolLib::@2d2811c1c4b61f3878bd"
+		},
+		{
+			"backtrace" : 1,
+			"id" : "MyThreadPoolLib::@d5e3d60c4753925707bc"
 		}
 	],
 	"id" : "main::@6890427a1f51a3e7e1df",
@@ -112,6 +145,11 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 1,
+				"fragment" : "/mnt/hgfs/VMshared/code/c++/MysqlPool/lib/libMyThreadPoolLib.a",
+				"role" : "libraries"
+			},
+			{
 				"backtrace" : 4,
 				"fragment" : "-lmysqlclient",
 				"role" : "libraries"
@@ -119,6 +157,11 @@
 			{
 				"backtrace" : 4,
 				"fragment" : "-ljsoncpp",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "-lpthread",
 				"role" : "libraries"
 			}
 		],

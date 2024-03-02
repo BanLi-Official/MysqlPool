@@ -6,24 +6,36 @@
 #include <chrono> //时间库
 
 
+
 using namespace std;
 using namespace Json;
 using namespace chrono;
 
 
-ConnPool *ConnPool::getConnPoll()
+
+ConnPool *ConnPool::getConnPool()
 {
-    static ConnPool *pool;
+    static ConnPool *pool=new ConnPool();
     return pool;
 }
 
 bool ConnPool::parseConfigJson()
 {
-    ifstream file("../json/configJson.json"); //将这个json文件读出来
+    ifstream file; //将这个json文件读出来
+    file.open("/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/json/configJson.json");
+    //file.open("./configJson.json");
+
+    if (!file.is_open()) 
+    {
+        cout << "无法打开JSON文件" << endl;
+        return false;
+    }
 
     Reader reader;
     Value root;
     reader.parse(file,root);   //交给jsoncpp去解析
+
+    
 
     if(root.isObject())
     {
@@ -36,10 +48,17 @@ bool ConnPool::parseConfigJson()
         min=root["min"].asInt();
         timeout=root["timeout"].asInt();
         maxldleTime=root["maxldleTime"].asInt();
+        cout<<"解析成功"<<endl;
         return true;
+    }
+    else if(root.isArray())
+    {
+        cout<<"解析失败"<<endl;
+        return false;
     }
 
     return false;
+
 
 }
 
@@ -52,6 +71,10 @@ bool ConnPool::createConn()
     {
         cout<<"创建一条数据库连接失败"<<endl;
         return false;
+    }
+    else
+    {
+        //cout<<"创建一条数据库连接成功"<<endl;
     }
     sizeNow++;
     ConnQ.push(conn);
@@ -151,6 +174,7 @@ ConnPool::ConnPool() // 构造函数
     if(!parseConfigJson())
     {
         cout<<"分析配置文件失败！"<<endl;
+        
     }
 
     sizeNow=0;

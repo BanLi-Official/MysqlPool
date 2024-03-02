@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles /mnt/hgfs/VMshared/code/c++/MysqlPool/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles /mnt/hgfs/VMshared/code/c++/MysqlPool/build/ThreadPool//CMakeFiles/progress.marks
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/MysqlPool/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,81 +103,80 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named main
+# Convenience name for target.
+ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule
+.PHONY : ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule
 
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
-
-#=============================================================================
-# Target rules for targets named MysqlPoolLib
-
-# Build rule for target.
-MysqlPoolLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MysqlPoolLib
-.PHONY : MysqlPoolLib
-
-# fast build rule for target.
-MysqlPoolLib/fast:
-	$(MAKE) $(MAKESILENT) -f Pool/CMakeFiles/MysqlPoolLib.dir/build.make Pool/CMakeFiles/MysqlPoolLib.dir/build
-.PHONY : MysqlPoolLib/fast
-
-#=============================================================================
-# Target rules for targets named MyThreadPoolLib
-
-# Build rule for target.
-MyThreadPoolLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyThreadPoolLib
+# Convenience name for target.
+MyThreadPoolLib: ThreadPool/CMakeFiles/MyThreadPoolLib.dir/rule
 .PHONY : MyThreadPoolLib
 
 # fast build rule for target.
 MyThreadPoolLib/fast:
-	$(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build
 .PHONY : MyThreadPoolLib/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+ThreadPool.o: ThreadPool.cpp.o
+.PHONY : ThreadPool.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+ThreadPool.cpp.o:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/ThreadPool.cpp.o
+.PHONY : ThreadPool.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+ThreadPool.i: ThreadPool.cpp.i
+.PHONY : ThreadPool.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+ThreadPool.cpp.i:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/ThreadPool.cpp.i
+.PHONY : ThreadPool.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+ThreadPool.s: ThreadPool.cpp.s
+.PHONY : ThreadPool.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+ThreadPool.cpp.s:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/ThreadPool.cpp.s
+.PHONY : ThreadPool.cpp.s
+
+taskQueue.o: taskQueue.cpp.o
+.PHONY : taskQueue.o
+
+# target to build an object file
+taskQueue.cpp.o:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/taskQueue.cpp.o
+.PHONY : taskQueue.cpp.o
+
+taskQueue.i: taskQueue.cpp.i
+.PHONY : taskQueue.i
+
+# target to preprocess a source file
+taskQueue.cpp.i:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/taskQueue.cpp.i
+.PHONY : taskQueue.cpp.i
+
+taskQueue.s: taskQueue.cpp.s
+.PHONY : taskQueue.s
+
+# target to generate assembly for a file
+taskQueue.cpp.s:
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(MAKE) $(MAKESILENT) -f ThreadPool/CMakeFiles/MyThreadPoolLib.dir/build.make ThreadPool/CMakeFiles/MyThreadPoolLib.dir/taskQueue.cpp.s
+.PHONY : taskQueue.cpp.s
 
 # Help Target
 help:
@@ -188,11 +187,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MyThreadPoolLib"
-	@echo "... MysqlPoolLib"
-	@echo "... main"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... ThreadPool.o"
+	@echo "... ThreadPool.i"
+	@echo "... ThreadPool.s"
+	@echo "... taskQueue.o"
+	@echo "... taskQueue.i"
+	@echo "... taskQueue.s"
 .PHONY : help
 
 
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/hgfs/VMshared/code/c++/MysqlPool/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

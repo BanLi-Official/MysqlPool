@@ -1,7 +1,7 @@
 [
 {
   "directory": "/mnt/hgfs/VMshared/code/c++/MysqlPool/build",
-  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile -g -o CMakeFiles/main.dir/main.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/main.cpp",
+  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile -I/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool -g -o CMakeFiles/main.dir/main.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/main.cpp",
   "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/main.cpp",
   "output": "CMakeFiles/main.dir/main.cpp.o"
 },
@@ -16,5 +16,17 @@
   "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/headFile -I/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/include -g -o CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/MysqlConn.cpp",
   "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/Pool/sourceFile/MysqlConn.cpp",
   "output": "Pool/CMakeFiles/MysqlPoolLib.dir/sourceFile/MysqlConn.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/MysqlPool/build/ThreadPool",
+  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool/ThreadPool -g -o CMakeFiles/MyThreadPoolLib.dir/ThreadPool.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool/ThreadPool.cpp",
+  "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool/ThreadPool.cpp",
+  "output": "ThreadPool/CMakeFiles/MyThreadPoolLib.dir/ThreadPool.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/MysqlPool/build/ThreadPool",
+  "command": "/usr/bin/g++  -I/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool/ThreadPool -g -o CMakeFiles/MyThreadPoolLib.dir/taskQueue.cpp.o -c /mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool/taskQueue.cpp",
+  "file": "/mnt/hgfs/VMshared/code/c++/MysqlPool/ThreadPool/taskQueue.cpp",
+  "output": "ThreadPool/CMakeFiles/MyThreadPoolLib.dir/taskQueue.cpp.o"
 }
 ]
